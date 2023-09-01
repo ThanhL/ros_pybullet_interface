@@ -1,0 +1,4 @@
+float64 camera_distance
+float64 camera_yaw
+float64 camera_pitch
+float64[] camera_target_position

@@ -1,0 +1,21 @@
+int64 joint_index
+string joint_name
+int64 joint_type
+string joint_type_str
+int64 q_index
+int64 u_index
+int64 flags
+float64 joint_damping
+float64 joint_friction
+float64 joint_lower_limit
+float64 joint_upper_limit
+float64 joint_max_force
+float64 joint_max_velocity
+string link_name
+geometry_msgs/Point joint_axis
+geometry_msgs/Point parent_frame_pos
+geometry_msgs/Quaternion parent_frame_orn
+int64 parent_index
+
+bool is_fixed
+bool is_revolute
