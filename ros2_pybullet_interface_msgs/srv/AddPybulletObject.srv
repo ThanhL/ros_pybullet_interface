@@ -1,0 +1,4 @@
+ros2_pybullet_interface_msgs/PybulletObject pybullet_object
+---
+bool success
+string message

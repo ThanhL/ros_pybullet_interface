@@ -1,0 +1,5 @@
+ros2_pybullet_interface_msgs/CalculateInverseKinematicsProblem problem
+---
+bool success
+string message
+sensor_msgs/JointState solution

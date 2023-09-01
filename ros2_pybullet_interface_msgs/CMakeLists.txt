@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -16,13 +17,19 @@ find_package(rosidl_default_generators REQUIRED)
 
 # Messages to build
 rosidl_generate_interfaces(${PROJECT_NAME}
-  #"msg/CalculateInverseKinematicsProblem.msg"
-  #"msg/JointInfo.msg"
+  "msg/CalculateInverseKinematicsProblem.msg"
+  "msg/JointInfo.msg"
   "msg/KeyboardEvent.msg"
   "msg/MouseEvent.msg"
   "msg/PybulletObject.msg"
   "msg/ResetDebugVisualizerCamera.msg"
-  DEPENDENCIES builtin_interfaces std_msgs
+  "srv/AddPybulletObject.srv"
+  "srv/CalculateInverseKinematics.srv"
+  "srv/GetDebugVisualizerCamera.srv"
+  "srv/ResetEffState.srv"
+  "srv/ResetJointState.srv"
+  "srv/RobotInfo.srv"
+  DEPENDENCIES builtin_interfaces std_msgs geometry_msgs sensor_msgs
  )
 
 if(BUILD_TESTING)

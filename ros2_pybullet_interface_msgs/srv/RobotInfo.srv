@@ -1,0 +1,9 @@
+---
+string robot_name
+string root_link_name
+int64 body_unique_id
+int64 num_joints
+int64 num_dof
+ros2_pybullet_interface_msgs/JointInfo[] joint_info
+string[] enabled_ft_sensors
+sensor_msgs/JointState current_joint_state
