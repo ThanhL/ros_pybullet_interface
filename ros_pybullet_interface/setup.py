@@ -1,3 +1,5 @@
+import os
+from glob import glob
 from setuptools import setup
 
 package_name = 'ros_pybullet_interface'
@@ -10,6 +12,10 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        # Include all launch files.
+        (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*'))),
+        # Include all config files.
+        (os.path.join('share', package_name, 'config'), glob('config/*.yaml'))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -20,7 +26,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'rpbi_node = ros_pybullet_interface.rpbi_node:main',
+            'rpbi_node = ros_pybullet_interface.ros_pybullet_interface_node:main',
+            # 'rpbi_node = ros_pybullet_interface.rpbi_node:main',
             'dynamic_object_node = ros_pybullet_interface.dynamic_object_node:main',
             'visual_object_node = ros_pybullet_interface.visual_object_node:main',
         ],
